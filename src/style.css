@@ -1,0 +1,30 @@
+.main-table{
+    width: 700px;
+    border-collapse: collapse;
+    border: 3px solid black;
+}
+.main-table__caption{
+    font-size: 36px;
+    font-weight: bold;
+}
+.main-table__td{
+    width: 50px;
+}
+.main-table__td-name{
+    width: 100px;
+}
+.main-form__input-mark{
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+.main-table__submit, .main-table__input {
+    text-align: center;
+    width: 240px;
+}
+.main-form{
+    margin-top: 5px;
+}
+.editBtn, .deleteBtn{
+    width: 120px;
+}
