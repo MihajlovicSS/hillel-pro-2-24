@@ -21,7 +21,6 @@ export class FormStudent{
         e.preventDefault()  
           
         const studentName = this.getData()
-        console.log(studentName)
         this.clearForm()
     
         if(!this.isValidName(studentName)){

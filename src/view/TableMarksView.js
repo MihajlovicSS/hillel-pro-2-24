@@ -11,50 +11,23 @@ export class TableMarks{
         this.options = options
         this.table.addEventListener('click', this.onDltButtonClick.bind(this))
         this.table.addEventListener('focusout', this.onInputClick.bind(this))
-        // this.table.addEventListener('click', this.onTableClick.bind(this))
     }
 
-    // onTableClick(e){
-    //     const target = e.target
-    //     const studentRow = this.findStudentRow(target)
-    //     const id = studentRow.dataset.id
-
-    //     if(this.isDeleteButton(target)) {
-    //         console.log('Delete pressed')
-    //         this.options.onDelete(id, studentRow)
-    //     }
-    //     else if(this.isInput(target)){
-    //         console.log('Input Focused')
-    //         console.log(target)
-    //         target.onfocusout = () => {
-    //             console.log('onfocusout')
-    //             const idInput = target.dataset.id
-    //             const newMark = target.value
-
-    //             this.options.onEdit(id, idInput, newMark)
-    //         }
-    //     }
-    // }
-
     onDltButtonClick(e){
-        console.log('onDltButtonClick')
         const target = e.target
         const studentRow = this.findStudentRow(target)
         const id = studentRow.dataset.id
 
         if(this.isDeleteButton(target)) {
-            console.log('Delete pressed')
             this.options.onDelete(id, studentRow)
         }
     }
 
     onInputClick(e){
-        console.log('onInputClick')
         const target = e.target
         const id = this.findStudentRow(target).dataset.id
 
         if(this.isInput(target)){
-            console.log('Input Focused')
             const idInput = target.dataset.id
             const newMark = target.value
 

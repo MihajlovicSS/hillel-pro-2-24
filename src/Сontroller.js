@@ -15,7 +15,6 @@ export class Controller{
         this.studentList.fetchList()
             .then(() => {
                 this.tableMarks.renderList(this.studentList.getStudentList())
-                console.log(this.studentList.getStudentList())
             })
     }
 
@@ -23,8 +22,6 @@ export class Controller{
         this.studentList.createListItem(student)
             .then((student) => {
                 this.tableMarks.renderListItem(student)
-                console.log(this.studentList.getStudentList())
-                console.log('Удача')
             })
             .catch((error) => {
                 Controller.showError(error)
@@ -36,7 +33,6 @@ export class Controller{
         this.studentList.deleteListItem(id)
             .then(() => {
                 this.tableMarks.deleteRow(studentRow)
-                console.log(this.studentList.getStudentList())
             })
             .catch((error) => {
                 Controller.showError(error)
@@ -44,16 +40,9 @@ export class Controller{
     }
 
     updateMark(idStudent, idInput, newMark){
-        // console.log('Зашли')
-        // console.log(idInput)
-        // console.log(newMark)
-        // console.log(idStudent)
         const newStudent = this.studentList.createEditStudent(idStudent, idInput, newMark)
 
         this.studentList.updateListItem(idStudent, newStudent)
-            .then(() => {
-                console.log(this.studentList.getStudentList())
-            })
             .catch((error) => {
                 Controller.showError(error)
             })
